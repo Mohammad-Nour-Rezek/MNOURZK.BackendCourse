@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNOURZK.BackendCourse", "MNOURZK.BackendCourse\MNOURZK.BackendCourse.csproj", "{97854D78-8D49-427E-B4C5-349432E50082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNOURZK.BackendCourse.Basics", "MNOURZK.BackendCourse\MNOURZK.BackendCourse.Basics.csproj", "{97854D78-8D49-427E-B4C5-349432E50082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
