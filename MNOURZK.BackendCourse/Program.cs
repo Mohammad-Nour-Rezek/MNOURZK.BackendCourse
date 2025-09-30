@@ -251,8 +251,122 @@
 
             #endregion
 
+            #region Arrays
+
+            int[,] temp;
+
+            temp = new int[3, 4] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
+
+            Console.WriteLine("2D Array Elements:");
+
+            for (int i = 0; i < temp.GetLength(0); i++) // rows
+            {
+                for (int j = 0; j < temp.GetLength(1); j++) // columns
+                {
+                    Console.Write(temp[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            // jagged array
+            int[][] jaggedArray = new int[3][];
+            jaggedArray[0] = new int[] { 1, 2, 3 };
+            jaggedArray[1] = new int[] { 4, 5 };
+            jaggedArray[2] = new int[] { 6, 7, 8, 9 };
+            
+            Console.WriteLine("Jagged Array Elements:");
+            
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write(jaggedArray[i][j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+
+            Console.WriteLine("Thank you for using the Array Example.");
+
+            
+            ushort occurence = getoccurenceCount(new int[] { 1, 2, 3, 4, 5, 1, 2, 1, 1 }, 1);
+
+            Console.WriteLine($"The number of occurence is: {occurence}");
+
+            Console.ReadKey();
+
+
+            int[] reversedArray = ReverseArray(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+            
+            Console.WriteLine("Reversed Array: " + string.Join(", ", reversedArray));
+            
+            Console.ReadKey();
+            
+
+            int[] arrayWithoutDuplication = RemoveDuplication(new int[] { 1, 2, 3, 4, 5, 1, 2, 1, 1 });
+            
+            Console.WriteLine("Array Without Duplication: " + string.Join(", ", arrayWithoutDuplication));
+            
+            Console.ReadKey();
+
+
+
             #endregion
 
+            #endregion
+
+        }
+
+        // Assignment, function GetOccurenceCount(int [] arr, int number)
+        // take array and number, return how many times the number exists in the array
+        public static ushort getoccurenceCount(int[] arr, int number)
+        {
+            ushort count = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == number)
+                {
+                    count++;
+                }
+            }
+
+            //foreach (var item in arr)
+            //{
+            //    if (item == number)
+            //    {
+            //        count++;
+            //    }
+            //}
+
+            return count;
+        }
+
+        //Assigment2: reverse array, take array and return the revered array [same array or new one]
+        public static int[] ReverseArray(int[] arr)
+        {
+            int[] reversedArray = new int[arr.Length];
+            for (int i = 0, j = arr.Length - 1; i < arr.Length; i++, j--)
+            {
+                reversedArray[i] = arr[j];
+            }
+            return reversedArray;
+        }
+
+        // Assigment3: remove duplication from the array, take array and return the array without duplication [same array or new one]
+        // use new array to work
+        public static int[] RemoveDuplication(int[] arr)
+        {
+            List<int> uniqueList = new List<int>();
+            foreach (var item in arr)
+            {
+                if (!uniqueList.Contains(item))
+                {
+                    uniqueList.Add(item);
+                }
+            }
+            return uniqueList.ToArray();
         }
 
         public static void Calculator()
